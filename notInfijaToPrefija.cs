@@ -1,27 +1,33 @@
 namespace notInfijaToPrefija
 {
-    public class notInfijaToPrefija
+    public class notInfToPref
     {
-        public static string Infijo2PrefijoTxt(string infijo)
+        public static string ecInfToPre(string infijo)
         {
-            Pila p1 = Infijo2Prefijo(infijo);
+            //Inicializamos nuestra pila p1 con el resultado de la funcion conversor
+            //de infijo a prefijo
+            Pila p1 = InfToPreConv(infijo);
+
+            //Creamos una cadena que estará vacia, a esta le meteremos los datos
+            //reordenados de la pila
             string text = "";
             while (p1.i > 0)
             {
                 text += p1.pop();
             }
-            return text;
 
+            //Retornamos la cadena ya con la expresion reordenada
+            return text;
         }
 
-        public static Pila Infijo2Prefijo(string infijo)
+        public static Pila InfToPreConv(string infijo)
         {
-            infijo = '(' + infijo; // Agregamos al final del infijo un ')'
-            int tamaño = infijo.Length;
-            Pila PilasDefinitiva = new Pila(tamaño);
-            Pila PilasTemp = new Pila(tamaño);
-            PilasTemp.push(')'); // Agregamos a la Pila temporal un '('
-            for (int i = tamaño - 1; i > -1; i--)
+            infijo = '(' + infijo;
+            int size = infijo.Length;
+            Pila PilasDefinitiva = new Pila(size);
+            Pila PilasTemp = new Pila(size);
+            PilasTemp.push(')');
+            for (int i = size - 1; i > -1; i--)
             {
                 char caracter = infijo[i];
                 switch (caracter)

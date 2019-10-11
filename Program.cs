@@ -1,17 +1,12 @@
-﻿using System;
+﻿using notInfijaToPrefija;
 
-namespace notInfijaToPrefija
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            notInfijaToPrefija hola = new notInfijaToPrefija();
+        string expresion = "b-a";
+        string ecuAPrefijo = ecInfToPre(expresion);
 
-            string expresion = "b-a";
-            string ecuAPrefijo = Infijo2PrefijoTxt(expresion);
-
-            System.Console.WriteLine("Esta es la ecuacion: " + ecuAPrefijo);
-        }
+        System.Console.WriteLine("Esta es la ecuacion: " + ecuAPrefijo);
     }
 }

@@ -2,19 +2,19 @@ namespace notInfijaToPrefija
 {
     public class Pila
     {
-        int tamaño;
-        char[] items;
-        int i;
+        public int size;
+        public char[] items;
+        public int i;
 
-        Pila(int tamaño)
+        public Pila(int tamaño)
         {
-            this.tamaño = tamaño;
+            this.size = tamaño;
             this.items = new char[tamaño];
             this.i = 0;
         }
         public bool push(char item)
         {
-            if (i < tamaño)
+            if (i < size)
             {
                 items[i++] = item;
                 return true;
